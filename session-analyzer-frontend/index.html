@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session Rating Analyzer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📊 Session Rating Analyzer</h1>
+        <p>Ask questions about session ratings in simple English</p>
+      </header>
+
+      <main>
+        <div class="query-section">
+          <div class="input-group">
+            <textarea
+              id="queryInput"
+              placeholder="Ask anything about the session data... 
+Example: 'What is the average rating for Rishi Bollu in 2024?'
+Example: 'Show me sessions with low ratings in SRE domain'
+Example: 'Compare rating trends from Q1 to Q2'"
+              rows="3"
+            ></textarea>
+            <button id="submitBtn" onclick="submitQuery()">
+              <span id="submitText">Analyze</span>
+              <span id="loadingSpinner" class="spinner" style="display: none"
+                >⏳</span
+              >
+            </button>
+          </div>
+
+          <div class="examples">
+            <p><strong>Try asking:</strong></p>
+            <div class="example-queries">
+              <span class="example" onclick="fillQuery(this)"
+                >Average rating for each instructor</span
+              >
+              <span class="example" onclick="fillQuery(this)"
+                >Sessions with attendance below 50%</span
+              >
+              <span class="example" onclick="fillQuery(this)"
+                >Best performing domains in 2024</span
+              >
+              <span class="example" onclick="fillQuery(this)"
+                >Rating improvement trends over time</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div id="resultsSection" class="results-section" style="display: none">
+          <div class="results-header">
+            <h3>📈 Query Results</h3>
+            <div id="resultMeta" class="result-meta"></div>
+          </div>
+
+          <!-- Raw Data Section - Show by default -->
+          <div id="rawDataSection" class="raw-data-section">
+            <h4 class="section-title">📋 Raw Data from MongoDB</h4>
+            <div id="rawDataContent" class="raw-data-content"></div>
+          </div>
+
+          <!-- Analysis Section -->
+          <div id="analysisSection" class="analysis-section">
+            <h4 class="section-title">🤖 AI Analysis</h4>
+            <div id="analysisContent" class="analysis-content"></div>
+          </div>
+        </div>
+
+        <div id="errorSection" class="error-section" style="display: none">
+          <div class="error-content">
+            <h3>❌ Something went wrong</h3>
+            <p id="errorMessage"></p>
+            <button onclick="clearError()" class="retry-btn">Try Again</button>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="status-indicator">
+          <span id="connectionStatus" class="status-dot"></span>
+          <span id="statusText">Checking connection...</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

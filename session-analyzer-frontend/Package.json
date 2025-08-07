@@ -1,0 +1,25 @@
+{
+  "name": "session-analyzer-backend",
+  "version": "1.0.0",
+  "description": "Backend API for session rating analyzer",
+  "main": "api/query.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Build completed'"
+  },
+  "keywords": [
+    "mongodb",
+    "openai",
+    "api"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "mongodb": "^6.3.0",
+    "openai": "^4.24.7"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
