@@ -1,0 +1,34 @@
+{
+  "name": "session-rating-analyzer",
+  "version": "1.0.0",
+  "description": "Natural language interface for session rating database analysis",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "build": "echo 'Build completed'",
+    "vercel-build": "echo 'Vercel build completed'"
+  },
+  "keywords": [
+    "mongodb",
+    "openai",
+    "natural-language",
+    "analytics",
+    "session-ratings"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "mongodb": "^6.3.0",
+    "openai": "^4.24.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
